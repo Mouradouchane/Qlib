@@ -1,17 +1,15 @@
 
-const QlibMessage = "Qlib Console Part : ";
-
 function log(...ARGS){
     try{
         if(ARGS.length > 0){
             console.log(...ARGS);
         }
         else{
-            console.warn(QlibMessage + "0 argument");
+            console.warn(QlibConsoleMessage + "0 argument");
         }
     }
     catch(err){
-        console.err(QlibMessage + err);
+        console.error(QlibConsoleMessage + err);
     }
 }
 
@@ -24,27 +22,31 @@ function logN(...ARGS){
             }
         }
         else{
-            console.warn(QlibMessage + "0 argument");
+            console.warn(QlibConsoleMessage + "0 argument");
         }
     }
     catch(err){
-        console.err(QlibMessage + err);
+        console.error(QlibConsoleMessage + err);
     }
 }
 
 
-function logString(ARGS , joinType = ""){
+function logString(joinType = " " , ...ARGS){
+
     if(ARGS.length > 0){
         let NewString = ARGS.join(joinType);
+
         if(joinType != undefined && joinType != null ){
             console.log(NewString);
-            return NewString;
         }
+
+        return NewString;
     }
     else{
-        console.warn(QlibMessage + "0 argument");
+        console.warn(QlibConsoleMessage + "0 argument");
         return "";
     }
+
 }
 
 
@@ -56,12 +58,12 @@ function logSum(...ARGS){
             return sum;
         }
         else{
-            console.warn(QlibMessage + "0 argument");
+            console.warn(QlibConsoleMessage + "0 argument");
             return 0;
         }
     }
     catch(err){
-        console.error(QlibMessage + err);
+        console.error(QlibConsoleMessage + err);
         return null;
     }
 }
@@ -70,10 +72,10 @@ function logSum(...ARGS){
 function logObj(OBJECT = {}, keys = true , values = true , typelog = "log"){
     try{
         if(!keys && !values){
-            return console.warn(QlibMessage + "arguments 'keys' & 'values' false");
+            return console.warn(QlibConsoleMessage + "arguments 'keys' & 'values' false");
         }
         if(typeof(OBJECT) != "object"){
-            return console.error(QlibMessage + "invalid varible");
+            return console.error(QlibConsoleMessage + "invalid varible");
         }
         if(typelog == "log"){
             for(let key in OBJECT){
@@ -131,14 +133,42 @@ function logObj(OBJECT = {}, keys = true , values = true , typelog = "log"){
             }
         }
 
+        if(typelog == "assert"){
+            for(let key in OBJECT){
+                if(keys && values){
+                    console.assert(false , key,":",OBJECT[key]);
+                }
+                if(keys && !values){
+                    console.assert(false , key);
+                }
+                if(!keys && values){
+                    console.assert(false , OBJECT[key]);
+                }
+            }
+        }
+
+        if(typelog == "table"){
+            for(let key in OBJECT){
+                if(keys && values){
+                    console.table(key,":",OBJECT[key]);
+                }
+                if(keys && !values){
+                    console.table(key);
+                }
+                if(!keys && values){
+                    console.table(BJECT[key]);
+                }
+            }
+        }
+
     }
     catch(err){
-        console.error(QlibMessage + err);
+        console.error(QlibConsoleMessage + err);
     }
 }
 
 
-function clear(message = ""){
+function clear(message = " "){
     console.clear();
     console.log(message);
 }
