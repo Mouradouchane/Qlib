@@ -13,11 +13,20 @@ function assert(...ARGS){
     }
 }
 
-function assertN(...ARGS){
+function assertN(MSG , ...ARGS){
     try{
         if(ARGS.length > 0){
-            for(let i = 0 ; i < ARGS.length ; i+=1){
-                console.assert(false , ARGS[i] );
+
+            switch (MSG){
+                case "" :   for(let i = 0 ; i < ARGS.length ; i+=1){
+                                console.assert(false , ARGS[i]);
+                            } 
+                break;
+
+                default :   for(let i = 0 ; i < ARGS.length ; i+=1){
+                                console.assert(false , MSG , ARGS[i]);
+                            } 
+                break;
             }
         }
         else{

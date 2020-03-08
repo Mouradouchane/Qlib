@@ -1,5 +1,7 @@
 
-CallConsolePart();
+
+CallPart(ConsoleSources);
+CallPart(AlertSources);
 
 window.addEventListener( "load" , _ => {
 
@@ -27,19 +29,33 @@ window.addEventListener( "load" , _ => {
     //logObj(str , true , true , "info");
     //clear();
 
+    //logWithStyle();
+    //logCustomMessage();
+
+    //logEmojiMsg();
     
-    let arr = ["string" , false , 1,2,3,4,5,Infinity , NaN , undefined , null , 0 , -1 , {} , []];
+    //logTable(obj , "data :" , "");
+    //logMultiTables(Array2D);
+
+    
     let obj = {
         x : "RK",
         y : "LP",
-        Aka : "Qliter"
+        Aka : "Qliter",
+        isReady : true
     }
+    
+    var Array2D = [obj,obj,obj];
 
-    var infoTitle = "Hint =>";
-    var str = "call Hello();";
+    let arr = ["string" , false , 1,2,3,4,5,Infinity , NaN , undefined , null , 0 , -1 , obj ];
     
-    //logWithStyle();
-    //logCustomMessage();
-    
+    // ==== not finished yet ====
+    //logObj(obj , true , false , "table");
+
+    var myAlert = new alertFullScreen("title" , "msg" , "center" , "light" , true ,true,true);
+    myAlert.Print();
+
+    // CONSOLE( _ , ...Array2D);
+    CONSOLE_N( "error" , _ , ...Array2D);
 
 });

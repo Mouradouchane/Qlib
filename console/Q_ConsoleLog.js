@@ -14,12 +14,22 @@ function log(...ARGS){
 }
 
 
-function logN(...ARGS){
+function logN(MSG , ...ARGS){
     try{
         if(ARGS.length > 0){
-            for(let i = 0 ; i < ARGS.length ; i+=1){
-                console.log(ARGS[i]);
+
+            switch (MSG){
+                case "" :  for(let i = 0 ; i < ARGS.length ; i+=1){
+                                    console.log(ARGS[i]);
+                                } 
+                break;
+
+                default :   for(let i = 0 ; i < ARGS.length ; i+=1){
+                                console.log(MSG , ARGS[i]);
+                            } 
+                break;
             }
+            
         }
         else{
             console.warn(QlibConsoleMessage + "0 argument");
@@ -146,21 +156,6 @@ function logObj(OBJECT = {}, keys = true , values = true , typelog = "log"){
                 }
             }
         }
-
-        if(typelog == "table"){
-            for(let key in OBJECT){
-                if(keys && values){
-                    console.table(key,":",OBJECT[key]);
-                }
-                if(keys && !values){
-                    console.table(key);
-                }
-                if(!keys && values){
-                    console.table(BJECT[key]);
-                }
-            }
-        }
-
     }
     catch(err){
         console.error(QlibConsoleMessage + err);
