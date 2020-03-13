@@ -1,7 +1,8 @@
 
 
-CallPart(ConsoleSources);
-CallPart(AlertSources);
+CallPart(Console_Sources);
+CallPart(Alert_Sources);
+CallPart(Confirm_Sources);
 
 window.addEventListener( "load" , _ => {
 
@@ -37,7 +38,13 @@ window.addEventListener( "load" , _ => {
     //logTable(obj , "data :" , "");
     //logMultiTables(Array2D);
 
+    //CONSOLE( _ , ...Array2D);
+    //CONSOLE_N("console type" , "Message :" , ...Array2D);
     
+    // var MyAlert = new Alert( "title" , `message` , "dark", true , true , true);
+    //     MyAlert.Show();
+    //     MyAlert.setCustomStyle([ArrayOfCss]);
+
     let obj = {
         x : "RK",
         y : "LP",
@@ -46,16 +53,12 @@ window.addEventListener( "load" , _ => {
     }
     
     var Array2D = [obj,obj,obj];
+    let arr = ["string" , false , 1,2,3,4,5, Infinity , NaN , undefined , null , 0 , -1 , obj ];
+        
+    var ConfirmShowButton = document.querySelector("#showAlert") ,
+        ConfirmHideButton = document.querySelector("#HideAlert");
 
-    let arr = ["string" , false , 1,2,3,4,5,Infinity , NaN , undefined , null , 0 , -1 , obj ];
-    
-    // ==== not finished yet ====
-    //logObj(obj , true , false , "table");
-
-    var myAlert = new alertFullScreen("title" , "msg" , "center" , "light" , true ,true,true);
-    myAlert.Print();
-
-    // CONSOLE( _ , ...Array2D);
-    CONSOLE_N( "error" , _ , ...Array2D);
+    var Conf = new Confirm("confirm input","some inputs not ready yet","allow","refuse");
+        Conf.Print();
 
 });

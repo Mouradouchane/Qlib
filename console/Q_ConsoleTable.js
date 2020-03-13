@@ -1,6 +1,6 @@
 
 
-function logTable(ARG , MSG = "", typeMSG = "log"){
+function logTable(ARG , MSG = "", typeMSG = "table"){
     if(MSG != ""){
         switch (typeMSG) {
 

@@ -1,12 +1,12 @@
 
 function CONSOLE(ConsoleType = "log"  , ...ARGS){
     switch (ConsoleType){
-        case "log"   : log(...ARGS);    break;
-        case "warn"  : warn(...ARGS);   break;
-        case "error" : error(...ARGS);  break;
-        case "info"  : info(...ARGS);   break;
-        case "assert": assert(...ARGS); break;
-        default      : log(...ARGS);    break;
+        case "log"   : log(     ...ARGS );    break;
+        case "warn"  : warn(    ...ARGS );   break;
+        case "error" : error(   ...ARGS );  break;
+        case "info"  : info(    ...ARGS );   break;
+        case "assert": assert(  ...ARGS ); break;
+        default      : log(     ...ARGS );    break;
     }
 }
 

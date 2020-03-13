@@ -1,7 +1,7 @@
 
 const QlibConsoleMessage = "Qlib Console Part : ";
 
-const ConsoleSources = [
+const Console_Sources = [
     "/console/Q_ConsoleLog.js",
     "/console/Q_ConsoleWarn.js",
     "/console/Q_ConsoleError.js",
@@ -13,9 +13,12 @@ const ConsoleSources = [
     "/console/Q_CONSOLE.js"
 ];
 
-const AlertSources = [
-    "/alert/Q_AlertFullScreen.js",
-    
+const Alert_Sources = [
+    "/alert/Q_Alert.js",
+];
+
+const Confirm_Sources = [
+    "/confirm/Q_Confirm.js",
 ];
 
 function CallPart(ArraySources = []){

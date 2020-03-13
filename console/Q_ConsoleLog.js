@@ -19,9 +19,9 @@ function logN(MSG , ...ARGS){
         if(ARGS.length > 0){
 
             switch (MSG){
-                case "" :  for(let i = 0 ; i < ARGS.length ; i+=1){
-                                    console.log(ARGS[i]);
-                                } 
+                case ("" || _) :   for(let i = 0 ; i < ARGS.length ; i+=1){
+                                console.log(ARGS[i]);
+                            } 
                 break;
 
                 default :   for(let i = 0 ; i < ARGS.length ; i+=1){
@@ -29,7 +29,7 @@ function logN(MSG , ...ARGS){
                             } 
                 break;
             }
-            
+
         }
         else{
             console.warn(QlibConsoleMessage + "0 argument");
@@ -79,83 +79,57 @@ function logSum(...ARGS){
 }
 
 
-function logObj(OBJECT = {}, keys = true , values = true , typelog = "log"){
+function logObj(OBJECT = {}, keys = true , values = true , ConsoleType = "log"){
     try{
+
         if(!keys && !values){
             return console.warn(QlibConsoleMessage + "arguments 'keys' & 'values' false");
         }
-        if(typeof(OBJECT) != "object"){
+
+        else if(typeof(OBJECT) != "object"){
             return console.error(QlibConsoleMessage + "invalid varible");
         }
-        if(typelog == "log"){
+
+        else {
+            
             for(let key in OBJECT){
                 if(keys && values){
-                    console.log(key,":",OBJECT[key]);
+                    switch (ConsoleType) {
+                        case "log"   : console.log(key,":",OBJECT[key]); break;
+                        case "info"  : console.info(key,":",OBJECT[key]); break;
+                        case "error" : console.error(key,":",OBJECT[key]); break;
+                        case "warn"  : console.warn(key,":",OBJECT[key]); break;
+                        case "assert": console.assert(false,key,":",OBJECT[key]); break;
+
+                        default      : console.log(key,":",OBJECT[key]); break;
+                    }
                 }
                 if(keys && !values){
-                    console.log(key);
+                    switch (ConsoleType) {
+                        case "log"   : console.log(key); break;
+                        case "warn"  : console.warn(key); break;
+                        case "error" : console.error(key); break;
+                        case "info"  : console.info(key); break;
+                        case "assert": console.assert(key); break;
+
+                        default      : console.log(key); break;
+                    }
                 }
                 if(!keys && values){
-                    console.log(OBJECT[key]);
+                    switch (ConsoleType) {
+                        case "log"   : console.log(OBJECT[key]); break;
+                        case "warn"  : console.warn(OBJECT[key]); break;
+                        case "error" : console.error(OBJECT[key]); break;
+                        case "info"  : console.info(OBJECT[key]); break;
+                        case "assert": console.assert(OBJECT[key]); break;
+
+                        default      : console.log(OBJECT[key]); break;
+                    }
                 }
             }
+
         }
 
-        if(typelog == "warn"){
-            for(let key in OBJECT){
-                if(keys && values){
-                    console.warn(key,":",OBJECT[key]);
-                }
-                if(keys && !values){
-                    console.warn(key);
-                }
-                if(!keys && values){
-                    console.warn(OBJECT[key]);
-                }
-            }
-        }
-
-        if(typelog == "error"){
-            for(let key in OBJECT){
-                if(keys && values){
-                    console.error(key,":",OBJECT[key]);
-                }
-                if(keys && !values){
-                    console.error(key);
-                }
-                if(!keys && values){
-                    console.error(OBJECT[key]);
-                }
-            }
-        }
-
-        if(typelog == "info"){
-            for(let key in OBJECT){
-                if(keys && values){
-                    console.info(key,":",OBJECT[key]);
-                }
-                if(keys && !values){
-                    console.info(key);
-                }
-                if(!keys && values){
-                    console.info(OBJECT[key]);
-                }
-            }
-        }
-
-        if(typelog == "assert"){
-            for(let key in OBJECT){
-                if(keys && values){
-                    console.assert(false , key,":",OBJECT[key]);
-                }
-                if(keys && !values){
-                    console.assert(false , key);
-                }
-                if(!keys && values){
-                    console.assert(false , OBJECT[key]);
-                }
-            }
-        }
     }
     catch(err){
         console.error(QlibConsoleMessage + err);
