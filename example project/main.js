@@ -41,8 +41,8 @@ window.addEventListener( "load" , _ => {
     //CONSOLE( _ , ...Array2D);
     //CONSOLE_N("console type" , "Message :" , ...Array2D);
     
-    // var MyAlert = new Alert( "title" , `message` , "dark", true , true , true);
-    //     MyAlert.Show();
+    //var  MyAlert = new Alert( "title" , `message` , "dark", true , true , true);
+    //     MyAlert.Print();
     //     MyAlert.setCustomStyle([ArrayOfCss]);
 
     let obj = {
@@ -53,12 +53,10 @@ window.addEventListener( "load" , _ => {
     }
     
     var Array2D = [obj,obj,obj];
-    let arr = ["string" , false , 1,2,3,4,5, Infinity , NaN , undefined , null , 0 , -1 , obj ];
+    let arr = ["string" , false , 1,2, Infinity , NaN , undefined , null , 0 , -1 , obj];
         
-    var ConfirmShowButton = document.querySelector("#showAlert") ,
+    var ConfirmShowButton = document.querySelector("#showAlert"),
         ConfirmHideButton = document.querySelector("#HideAlert");
-
-    var Conf = new Confirm("confirm input","some inputs not ready yet","allow","refuse");
-        Conf.Print();
+        
 
 });

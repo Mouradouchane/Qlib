@@ -6,7 +6,7 @@ class Confirm{
                 MSG ,                   // message alert
                 buttonOneTextContent = "allow" , // text button 1 
                 buttonTowTextContent = "refuse",  // text button 2
-                ThemeStyle = "light" ,  // alert theme for dark or light "pages"  
+                ThemeStyle = "light" ,  // theme style for light or dark => "pages"  
         ){
             this.title = title;
             this.MSG = MSG;
@@ -34,7 +34,8 @@ class Confirm{
                     text-align: center;
                     padding: 1vh;
                     transform: translate(-50% , -50%);
-                    box-shadow: 0px 0px 8px 4px #0000006e;
+                    display : none;
+                    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.43);
                 `,
                 // title
                 `
@@ -48,6 +49,7 @@ class Confirm{
                     font-size : 2.5vh;
                     font-family: tahoma;
                     color :#2b2b2b;
+                    margin-top: -2vh;
                 `,
                 // button one 
                 `
@@ -76,7 +78,58 @@ class Confirm{
             ];
 
             this.DarkCss = [
-
+                // full confirm div
+                `
+                position : absolute;
+                z-index : 9998;
+                width : 50%;
+                top: 50%;
+                left : 50%;
+                background : rgb(28, 28, 28);
+                text-align: center;
+                padding: 1vh;
+                transform: translate(-50% , -50%);
+                display : none;
+                box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.43);
+                `,
+                // title
+                `
+                font-size : 4vh;
+                font-weight: bold;
+                font-family: tahoma;
+                color : rgb(148, 101, 217);
+                `,
+                // message "MSG"
+                `
+                font-size : 2.5vh;
+                font-family: tahoma;
+                color :white;
+                margin-top: -2vh;
+                `,
+                // button one 
+                `
+                font-size: 2.5vh;
+                background :#22f422;
+                border-style: none;
+                border-radius: 0.4vh;
+                padding-left : 1.5vh;
+                padding-right : 1.5vh;
+                padding-top: 0.5vh;
+                padding-bottom: 0.5vh;
+                cursor : pointer;
+                `,
+                // button tow
+                `   
+                font-size: 2.5vh;
+                background :#fb3939;
+                border-style: none;
+                border-radius: 0.4vh;
+                padding-left : 1.5vh;
+                padding-right : 1.5vh;
+                padding-top: 0.5vh;
+                padding-bottom: 0.5vh;
+                cursor : pointer;
+                `
             ];
 
             this.LightTheme = () => {
@@ -96,7 +149,19 @@ class Confirm{
             };
 
             this.DarkTheme = () => {
-                // we stoping here last time for making dark theme :)
+                let i = 0;
+
+                for(let elem in this.Elements){
+                    this.Elements[elem].style.cssText = this.DarkCss[i];
+                    i+=1;
+                }
+                
+                
+                for(let c =0 ; c < this.Buttons.length ; c+=1){
+                    this.Buttons[c].style.cssText = this.DarkCss[i];
+                    i+=1;
+                }
+
             };
 
             this.Print = () => {
@@ -117,19 +182,51 @@ class Confirm{
 
                 this.Buttons[0].addEventListener("click" , _ => {
                     this.value = true;
-                    console.log(this.value);
+                    this.Hide();
                 });
 
                 this.Buttons[1].addEventListener("click" , _ => {
                     this.value = false;
-                    console.log(this.value);
+                    this.Hide();
                 });
                 
-                this.LightTheme();
+                switch (this.ThemeStyle){
+                    case "light" : this.LightTheme(); break;
+                    case "dark" : this.DarkTheme(); break;
+                    default : this.LightTheme(); break;
+                }
 
                 ConfirmID += 1;
             }
+
+            this.Show = () => {
+                this.Elements.Confirm.style.display = "block";
+            };
+            this.Hide = () => {
+                this.Elements.Confirm.style.display = "none";
+            };
+
+            this.CustomStyle = null;
+
+            this.setCustomStyle = (ArrayOfCssStyle = []) => {
+
+                let targetConfirmElements = document.querySelector(`#Confirm${this.id}`).children;
+                    //debugger;
+                if(ArrayOfCssStyle.length >= 0){
+
+                    for(let i = 0 ; i < targetConfirmElements.length; i += 1){
+                        if( ArrayOfCssStyle[i] != undefined && 
+                            ArrayOfCssStyle[i] != null && 
+                            ArrayOfCssStyle[i] != "" ){
+                            
+                            targetConfirmElements[i].style.cssText += ArrayOfCssStyle[i];
+                        }
+                    }
+
+                }
+            }
+
         }
-    }
+}
 
 

@@ -265,7 +265,6 @@ class Alert{
         }
 
         this.Show = () => {
-            this.Print();
             this.invisible = true;
             this.AlertBackground.style.display = `block`;
             this.Elements.fullalert.style.display = `block`;
@@ -278,17 +277,23 @@ class Alert{
         
         this.setCustomStyle = (ArrayOfCssStyle = []) => {
 
-            let AlertParent = document.querySelector(`#alertFullScreen${this.id}`).children;
+            let targetAlert = document.querySelector(`#alertFullScreen${this.id}`).children;
+
             if(ArrayOfCssStyle.length >= 0){
-                for(let i = 0 ; i < AlertParent.length ; i += 1){
-                    if( ArrayOfCssStyle[i] != null &&  
-                        ArrayOfCssStyle[i] != undefined && 
-                        ArrayOfCssStyle[i] != ""
-                    ){
-                        AlertParent[i].style.cssText = ArrayOfCssStyle[i];
+
+                for(let i = 0 ; i < targetAlert.length ; i += 1){
+                    
+                    if( ArrayOfCssStyle[i] != null && 
+                        ArrayOfCssStyle[i] != undefined &&
+                        ArrayOfCssStyle[i] != "" ){
+                            
+                        targetAlert[i].style.cssText += ArrayOfCssStyle[i];
+                            
                     }
+                    
                 }
             }
+            
         }
     }
 }
