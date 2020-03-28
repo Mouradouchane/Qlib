@@ -1,6 +1,6 @@
 
 
-function logWithEmoji(MSG_With_Emoji , Css_Style_As_String){
+function logWithEmoji(MSG_With_Emoji = "", Css_Style_As_String){
 
     // emoji list supported by browsers 
     // https://unicode.org/emoji/charts/full-emoji-list.html

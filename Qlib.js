@@ -1,6 +1,8 @@
 
 const QlibConsoleMessage = "Qlib Console Part : ";
 
+// sources
+
 const Console_Sources = [
     "/console/Q_ConsoleLog.js",
     "/console/Q_ConsoleWarn.js",
@@ -21,7 +23,21 @@ const Confirm_Sources = [
     "/confirm/Q_Confirm.js",
 ];
 
-function CallPart(ArraySources = []){
+const Notification_Sources = [
+    "/notification/Q_ButtomBanner.js",
+];
+
+const String_Sources =  [
+    "/string/Q_String.js",
+    "/string/Q_StringFunctions.js",
+];
+
+const Compare_Sources = [
+    "/compare/Q_Compare.js",
+    "/compare/Q_MultiCompare.js"
+];
+
+function call(ArraySources = []){
 
     let Newscript; 
     

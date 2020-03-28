@@ -240,7 +240,7 @@ class Alert{
             });
         };
 
-        this.Print = () => {
+        this.Create = () => {
         
         document.body.insertAdjacentHTML("beforeend" , `
             <div id="alertBackground${this.id}" style="position:fixed;top:0px;left:0px;width:100%;height:100%;

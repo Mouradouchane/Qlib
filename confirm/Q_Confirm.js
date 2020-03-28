@@ -164,7 +164,7 @@ class Confirm{
 
             };
 
-            this.Print = () => {
+            this.Create = () => {
                 document.body.insertAdjacentHTML("beforeend" , `
                     <div id="Confirm${this.id}"> 
                         <p id="ConfirmTitle${this.id}"> ${this.title} </p>
