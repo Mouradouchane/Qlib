@@ -138,5 +138,32 @@ class NUMBER extends Number{
             return operation;
         
         }
+
+        this.isInt = () => {
+            // checking if float or not return "true || false || NaN"
+            let checkFloat = this.isFloat();
+
+            if(checkFloat != NaN){
+                if(checkFloat) return false;
+                else return true;
+            }
+            else return NaN;
+        }
+
+        this.isFloat = () => {
+            // if value is number
+            if(typeof(this.value) == "number"){
+                // converting value to string for check if has . or not :)
+                let tostr = this.value.toString();
+
+                // if has . return true else reutrn false
+                if(tostr.includes(".")) return true;
+                else return false;
+            }
+            else{
+                return NaN;
+            }
+        }
+
     }
 }

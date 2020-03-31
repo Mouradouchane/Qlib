@@ -36,12 +36,34 @@ function Logaritm(value){
     return Math.log(value);
 }
 
-function isInt(){
+function isInt(value){
+    // checking value if float or not return is "true || false || NaN"
+    let checkFloat = isFloat(value);
 
+    if(checkFloat != NaN){
+        // if isfloat return false
+        if(checkFloat) return false;
+        // else that mean is Int :)
+        else return true;
+    }
+    // if return is NaN
+    else return NaN;
 }
 
 function isFloat(value){
-    
+
+    // if arg value is number
+    if(typeof(value) == "number"){
+        // converting value to string for check if has . or not :)
+        let tostr = value.toString();
+
+        // if has . return true else reutrn false
+        if(tostr.includes(".")) return true;
+        else return false;
+    }
+    else{
+        return NaN;
+    }
 }
 
 function Floor(value){
@@ -99,5 +121,5 @@ const GB = 1024;
 let x = getPercent(GB, "1%");
 
 (async function(){
-    log(x);
+    
 })();
