@@ -1,10 +1,12 @@
 
+var stringID = 0;
+
 class STRING extends String{
     constructor(str = ""){
         super(str);
         
-        this.text = str.toString();
-        this.revText = this.text;
+        this.value = str.toString();
+        this.revText = this.value;
         
         this.lengthZeroBest = this.length -1;
 
@@ -13,28 +15,28 @@ class STRING extends String{
         }
 
         this.log = () => {
-            console.log(this.text);
+            console.log(this.value);
         }
         this.warn = () => {
-            console.warn(this.text);
+            console.warn(this.value);
         }
         this.error = () => {
-            console.error(this.text);
+            console.error(this.value);
         }
         this.info = () => {
-            console.info(this.text);
+            console.info(this.value);
         }
         this.exception = () => {
-            console.exception(this.text);
+            console.exception(this.value);
         }
 
         this.reverse = () =>{
-            this.revText = this.text.split("").reverse().join("");
+            this.revText = this.value.split("").reverse().join("");
             return this.revText;
         }
         
         this.toCharArray = () => {
-            return this.text.split("");
+            return this.value.split("");
         }
 
         this.toUpper = () => {
@@ -43,12 +45,12 @@ class STRING extends String{
         this.firstUpper = () => {
             let txt = "";
             
-            for(let i = 0 ; i < this.text.length ; i += 1){
+            for(let i = 0 ; i < this.value.length ; i += 1){
                 if( i == 0){
-                    txt += this.text[i].toUpperCase();
+                    txt += this.value[i].toUpperCase();
                 }
                 else{
-                    txt += this.text[i];
+                    txt += this.value[i];
                 }
             }
 
@@ -61,12 +63,12 @@ class STRING extends String{
         this.firstLower = () => {
             let txt = "";
             
-            for(let i = 0 ; i < this.text.length ; i += 1){
+            for(let i = 0 ; i < this.value.length ; i += 1){
                 if( i == 0){
-                    txt += this.text[i].toLowerCase();
+                    txt += this.value[i].toLowerCase();
                 }
                 else{
-                    txt += this.text[i];
+                    txt += this.value[i];
                 }
             }
 
@@ -76,21 +78,23 @@ class STRING extends String{
         this.isblng = () => {
             let rev = this.reverse();
 
-            if(this.text == rev) return true;
+            if(this.value == rev) return true;
             else return false;
         }
 
         this.is = (comparedValue) => {
-            if(this.text == comparedValue) return true;
+            if(this.value == comparedValue) return true;
             else return false;
         }
 
-        this.toHtmlElement = (ElementType = "p" , id = "defultID_arg") => {
+        this.toHtmlElement = (ElementType = "p" , id = `defultID${stringID}`) => {
             try{
                 let element = document.createElement(ElementType);
                 element.setAttribute("id",id);
-                element.textContent = this.text;
+                element.textContent = this.value;
 
+                stringID+=1;
+                
                 return element; 
             }
             catch(err){
@@ -100,10 +104,11 @@ class STRING extends String{
 
         this.toHtmlNode = (ElementInDom = document.body) =>{
             try{
-                let Node = document.createTextNode(this.text);
+                let Node = document.createTextNode(this.value);
                 
                 ElementInDom.append(Node);
                 
+                return Node;
             }
             catch(err){
                 throw err;

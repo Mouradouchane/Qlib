@@ -14,22 +14,12 @@ function log(...ARGS){
 }
 
 
-function logN(MSG , ...ARGS){
+function logN(...ARGS){
     try{
         if(ARGS.length > 0){
-
-            switch (MSG){
-                case ("" || _) :   for(let i = 0 ; i < ARGS.length ; i+=1){
-                                console.log(ARGS[i]);
-                            } 
-                break;
-
-                default :   for(let i = 0 ; i < ARGS.length ; i+=1){
-                                console.log(MSG , ARGS[i]);
-                            } 
-                break;
-            }
-
+            for(let i = 0 ; i < ARGS.length ; i+=1){
+                console.log(ARGS[i]);
+            } 
         }
         else{
             console.warn(QlibConsoleMessage + "0 argument");

@@ -5,6 +5,7 @@ call(Confirm_Sources);
 call(Notification_Sources);
 call(String_Sources);
 call(Compare_Sources);
+call(Numbers_Sources);
 
 window.addEventListener( "load" , _ => {
 
@@ -79,6 +80,11 @@ window.addEventListener( "load" , _ => {
         is() .....
     */
     
+    /* 
+        NUMBER class "" extend => Number
+        Number.value
+
+    */
     let obj = {
         x : "RK",
         y : "LP",
@@ -91,8 +97,7 @@ window.addEventListener( "load" , _ => {
     var Button1 = document.querySelector("#showAlert"),
         Button2 = document.querySelector("#HideAlert");
     
-    var st = new STRING("test str 2");
-        st.toHtmlNode(document.head);
-    
-    
-});
+
+
+        
+}); 

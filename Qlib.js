@@ -37,6 +37,11 @@ const Compare_Sources = [
     "/compare/Q_MultiCompare.js"
 ];
 
+const Numbers_Sources = [
+    "/numbers/Q_Number.js",
+    "/numbers/Q_NumbersFunctions.js"
+];
+
 function call(ArraySources = []){
 
     let Newscript; 
