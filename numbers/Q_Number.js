@@ -123,10 +123,7 @@ class NUMBER extends Number{
             }
         }
 
-        this.toCurrency = (currency = "ù") => {
-            return (this.value + currency);
-        }
-
+       
         this.getPercent = (PercentValueFromNumber) => {
             // just parse "PercentValueFromNumber" for operation
             let percent = Number.parseFloat(PercentValueFromNumber);
@@ -165,5 +162,17 @@ class NUMBER extends Number{
             }
         }
 
+        this.toArabicNumber = () =>{
+            return (this.value.toLocaleString('ar-EG'));
+        }
+
+        this.toCurrency = (currency = "$" , style = true) => {
+            if(style) return (new Intl.NumberFormat("en-US").format(this.value) + currency);
+            else return (this.value + currency);
+        }
+
+        this.speareted = (format = "en-US") => {
+            return (new Intl.NumberFormat(format).format(this.value));
+        }
     }
 }

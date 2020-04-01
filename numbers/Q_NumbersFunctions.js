@@ -100,8 +100,11 @@ function isNegative(value){
     else return false;
 }
 
-function toCurrency(currency = "ù"){
-    return (value + currency);
+function toCurrency(value , currency = "$" , style = true){
+
+    if(style) return (new Intl.NumberFormat("en-US").format(value) + currency);
+    else return (value + currency);
+
 }
 
 function getPercent(number, percentFromNumber = "50%"){
@@ -114,6 +117,10 @@ function getPercent(number, percentFromNumber = "50%"){
 
     // return operation as result 
     return operation;
+}
+
+function toArabicNumber(value){
+    return (value.toLocaleString('ar-EG'));
 }
 
 const GB = 1024;
