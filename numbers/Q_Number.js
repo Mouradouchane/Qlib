@@ -162,8 +162,12 @@ class NUMBER extends Number{
             }
         }
 
-        this.toArabicNumber = () =>{
+        this.toArabicNumbers = () => {
             return (this.value.toLocaleString('ar-EG'));
+        }
+
+        this.toChinesNumbers = () => {
+            return (this.value.toLocaleString("zh-Hans-CN-u-nu-hanidec"));
         }
 
         this.toCurrency = (currency = "$" , style = true) => {

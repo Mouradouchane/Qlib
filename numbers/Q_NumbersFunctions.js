@@ -123,10 +123,6 @@ function toArabicNumber(value){
     return (value.toLocaleString('ar-EG'));
 }
 
-const GB = 1024;
-
-let x = getPercent(GB, "1%");
-
-(async function(){
-    
-})();
+function toChinesNumbers(value){
+    return (value.toLocaleString("zh-Hans-CN-u-nu-hanidec"));
+}
