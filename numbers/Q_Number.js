@@ -14,6 +14,10 @@ class NUMBER extends Number{
             return typeof(this);
         }
 
+        this.typeofValue = _ => {
+            return this.typeof(this.value);
+        }
+
         this.is = (comparedValue) => {
             if(this.value == comparedValue) return true;
             else return false;

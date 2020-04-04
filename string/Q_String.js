@@ -10,8 +10,12 @@ class STRING extends String{
         
         this.lengthZeroBest = this.length -1;
 
-        this.typeof = () => {
+        this.typeof = _ => {
             return typeof(this);
+        }
+
+        this.typeofValue = _ => {
+            return this.typeof(this.value);
         }
 
         this.log = () => {
@@ -43,39 +47,21 @@ class STRING extends String{
             return this.toUpperCase();
         }
         this.firstUpper = () => {
-            let txt = "";
-            
-            for(let i = 0 ; i < this.value.length ; i += 1){
-                if( i == 0){
-                    txt += this.value[i].toUpperCase();
-                }
-                else{
-                    txt += this.value[i];
-                }
-            }
+            let txt = this.value;
 
-            return txt;
+            return (txt.charAt(0).toUpperCase() + txt.slice(1));
         }
 
         this.toLower = () => {
             return this.toLowerCase();
         }
         this.firstLower = () => {
-            let txt = "";
-            
-            for(let i = 0 ; i < this.value.length ; i += 1){
-                if( i == 0){
-                    txt += this.value[i].toLowerCase();
-                }
-                else{
-                    txt += this.value[i];
-                }
-            }
+            let txt = this.value;
 
-            return txt;
+            return (txt.charAt(0).toLowerCase() + txt.slice(1));
         }
 
-        this.isblng = () => {
+        this.isPalindrome = () => {
             let rev = this.reverse();
 
             if(this.value == rev) return true;

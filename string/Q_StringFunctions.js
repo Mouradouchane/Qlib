@@ -29,18 +29,8 @@ function toLower(str = "") {
 
 function firstUpper(str = ""){
     try{
-        let txt = "";
-    
-        for(let i = 0 ; i < str.length ; i += 1){
-            if( i == 0){
-                txt += str[i].toUpperCase();
-            }
-            else{
-                txt += str[i];
-            }
-        }
-    
-        return txt;
+        let txt = str;
+        return (txt.charAt(0).toUpperCase() + txt.slice(1));
     }
     catch(err){
         throw err;
@@ -50,18 +40,9 @@ function firstUpper(str = ""){
 
 function firstLower(str = ""){
     try{
-        let txt = "";
-    
-        for(let i = 0 ; i < str.length ; i += 1){
-            if( i == 0){
-                txt += str[i].toLowerCase();
-            }
-            else{
-                txt += str[i];
-            }
-        }
-    
-        return txt;
+        let txt = str;
+
+        return (txt.charAt(0).toLowerCase() + txt.slice(1));
     }
     catch(err){
         throw err;
@@ -69,7 +50,7 @@ function firstLower(str = ""){
     
 }
 
-function isblng(str = ""){
+function isPalindrome(str = ""){
     let rev = str.split("").reverse().join("");
     
     if(str == rev) return true;
