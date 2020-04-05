@@ -61,3 +61,13 @@ function CompareString(String1 = "", String2 = ""){
     if(String1 === String2) return true;
     else return false;
 }
+
+function Join(ArrayOfStrings = [] , separetor = " "){
+    if(Array.isArray(ArrayOfStrings)) return (ArrayOfStrings.join(separetor));
+    else throw null;
+}
+
+function Split(str = "" , separetor = " "){
+    if(typeof(str) == "string") return (str.split(separetor));
+    else return null;
+}
