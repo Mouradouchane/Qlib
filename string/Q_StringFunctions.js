@@ -71,3 +71,29 @@ function Split(str = "" , separetor = " "){
     if(typeof(str) == "string") return (str.split(separetor));
     else return null;
 }
+
+
+function toUTFArray(str = ""){
+    try{  
+        let splt = str.split("");
+        let UTFArray = [];
+
+        for(let i = 0 ; i < splt.length ; i += 1){
+            UTFArray.push(splt[i].codePointAt());
+        }
+
+        return UTFArray;
+    }
+    catch(err){
+        throw null;
+    }
+}
+
+function toChar(NumberUTF = 0){
+    try{
+        return String.fromCodePoint(NumberUTF);
+    }
+    catch(err){ 
+        throw err;
+    }
+}

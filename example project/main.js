@@ -13,8 +13,12 @@ window.addEventListener( "load" , _ => {
         Button2 = document.querySelector("#HideAlert");
     
     var kmp = new UNIT(120 , Units.Length.KiloMeter);
-
     
+    
+    let x = new STRING("this is A");
 
+    let utf = x.toUTFArray();
+
+    logN(toUTFArray("new usa") , utf);
 
 }); 

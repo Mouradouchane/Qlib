@@ -43,6 +43,22 @@ class STRING extends String{
             return this.value.split("");
         }
 
+        this.toUTFArray = () => {
+            try{  
+                let splt = this.value.split("");
+                let UTFArray = [];
+
+                for(let i = 0 ; i < splt.length ; i += 1){
+                    UTFArray.push(splt[i].codePointAt());
+                }
+
+                return UTFArray;
+            }
+            catch(err){
+                throw null;
+            }
+        }
+
         this.toUpper = () => {
             return this.toUpperCase();
         }
