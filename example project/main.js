@@ -13,4 +13,14 @@ window.addEventListener( "load" , _ => {
         Button2 = document.querySelector("#HideAlert");
  
 
+    var x = [1,2];
+    let b = [3,4];
+    
+    
+    log(x,b);
+
+    [x,b] = swap(x,b);
+
+    log(x,b);
+
 }); 
