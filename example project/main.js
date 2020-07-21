@@ -12,15 +12,12 @@ window.addEventListener( "load" , _ => {
     var Button1 = document.querySelector("#showAlert"),
         Button2 = document.querySelector("#HideAlert");
  
-
-    var x = [1,2];
-    let b = [3,4];
-    
+    var x = 0, b = 15.55;
     
     log(x,b);
 
-    [x,b] = swap(x,b);
+    x = swap(x,b);
 
-    log(x,b);
+    log(x);
 
 }); 
