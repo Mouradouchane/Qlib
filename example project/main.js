@@ -1,23 +1,16 @@
-call(Console_Sources);
-call(Alert_Sources);
-call(Confirm_Sources);
-call(Notification_Sources);
-call(String_Sources);
-call(Compare_Sources);
-call(Numbers_Sources);
-call(Swap_Sources);
+include(Sources_Console);
+include(Sources_String);
+include(Sources_Compare);
+include(Sources_Numbers);
+include(Sources_Swap);
 
-window.addEventListener( "load" , _ => {
+
+window.addEventListener("load" , function main(...args){
 
     var Button1 = document.querySelector("#showAlert"),
         Button2 = document.querySelector("#HideAlert");
  
-    var x = 0, b = 15.55;
     
-    log(x,b);
 
-    x = swap(x,b);
+});
 
-    log(x);
-
-}); 
