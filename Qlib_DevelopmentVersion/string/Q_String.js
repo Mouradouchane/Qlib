@@ -104,17 +104,40 @@ class STRING extends String{
             }
         }
 
-        this.toHtmlNode = (ElementInDom = document.body) =>{
+        this.toHtmlNode = (ParentInDom = document.body) =>{
             try{
                 let Node = document.createTextNode(this.value);
                 
-                ElementInDom.append(Node);
+                ParentInDom.append(Node);
                 
                 return Node;
             }
             catch(err){
                 throw err;
             }
+        }
+
+        this.Zfill = (fillValue = " " , HowMany = 0 , startPosition = this.value.length) => {
+
+            let str = this.value;
+
+            try{       
+                if( startPosition === str.length){
+        
+                    return (str + fillValue.toString().repeat(HowMany));
+        
+                }
+                else{
+                    let part1 = str.slice(0 , startPosition);
+                    let part2 = str.slice(startPosition , str.length);
+                    
+                    return (part1 + fillValue.toString().repeat(HowMany) + part2);
+                }
+            }
+            catch(error) {
+                throw null;
+            }
+        
         }
     }
 }

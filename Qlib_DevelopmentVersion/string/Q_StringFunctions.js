@@ -97,3 +97,24 @@ function toChar(NumberUTF = 0){
         throw err;
     }
 }
+
+function Zfill(str = "" , fillValue = " " , HowMany = 0 , startPosition = str.length){
+
+    try{       
+        if( startPosition === str.length){
+
+            return (str + fillValue.toString().repeat(HowMany));
+
+        }
+        else{
+            let part1 = str.slice(0 , startPosition);
+            let part2 = str.slice(startPosition , str.length);
+            
+            return (part1 + fillValue.toString().repeat(HowMany) + part2);
+        }
+    }
+    catch(error) {
+        throw null;
+    }
+
+}

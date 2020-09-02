@@ -9,7 +9,7 @@ function log(...ARGS){
         }
     }
     catch(err){
-        console.error(QlibConsoleMessage + err);
+        console.error(QlibConsoleMessage + " " + err);
     }
 }
 

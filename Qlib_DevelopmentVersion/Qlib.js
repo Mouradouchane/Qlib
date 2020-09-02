@@ -1,5 +1,5 @@
 
-//const QlibConsoleMessage = "Qlib : ";
+const QlibConsoleMessage = "Qlib : ";
 
 // sources
 
@@ -36,14 +36,15 @@ const Sources_Swap = [
     "../Qlib_DevelopmentVersion/swap/Q_swap.js"
 ]
 
-function include(ArraySources = []){
+function include(Scripts_Sources = []){
 
     let Newscript; 
     
-    for(let i = 0 ; i < ArraySources.length ; i += 1){
+    for(let i = 0 ; i < Scripts_Sources.length ; i += 1){
 
         Newscript = document.createElement("script");
-        Newscript.src = ArraySources[i];  
+        Newscript.src = Scripts_Sources[i];  
+        
         //document.body.append(Newscript);
         document.head.append(Newscript)
 
