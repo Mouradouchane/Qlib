@@ -1,17 +1,9 @@
 
 const QlibConsoleMessage = "Qlib : ";
 
-// sources
+// sources as paths of files in organization array
 
 const Sources_Console = [
-    "../Qlib_DevelopmentVersion/console/Q_ConsoleLog.js",
-    "../Qlib_DevelopmentVersion/console/Q_ConsoleWarn.js",
-    "../Qlib_DevelopmentVersion/console/Q_ConsoleError.js",
-    "../Qlib_DevelopmentVersion/console/Q_ConsoleInfo.js",
-    "../Qlib_DevelopmentVersion/console/Q_ConsoleAssert.js",
-    "../Qlib_DevelopmentVersion/console/Q_ConsoleLogStyle.js",
-    "../Qlib_DevelopmentVersion/console/Q_ConsoleEmoji.js",
-    "../Qlib_DevelopmentVersion/console/Q_ConsoleTable.js",
     "../Qlib_DevelopmentVersion/console/Q_CONSOLE.js",
     "../Qlib_DevelopmentVersion/console/Q_ConsoleFunctions.js"
 ];
@@ -37,6 +29,8 @@ const Sources_Swap = [
     "../Qlib_DevelopmentVersion/swap/Q_swap.js"
 ]
 
+
+// responsible function for appending sources to the header html element
 function include(Scripts_Sources = []){
 
     let Newscript; 
