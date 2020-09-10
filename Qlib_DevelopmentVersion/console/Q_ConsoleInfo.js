@@ -13,21 +13,13 @@ function info(...ARGS){
     }
 }
 
-function infoN(MSG , ...ARGS){
+function infoN(...ARGS){
     try{
         if(ARGS.length > 0){
-
-            switch (MSG){
-                case "" :  for(let i = 0 ; i < ARGS.length ; i+=1){
-                                    console.log(ARGS[i]);
-                                } 
-                break;
-
-                default :   for(let i = 0 ; i < ARGS.length ; i+=1){
-                                console.log(MSG , ARGS[i]);
-                            } 
-                break;
-            }
+ 
+            for(let i = 0 ; i < ARGS.length ; i+=1){
+                console.log(ARGS[i]);
+            } 
 
         }
         else{

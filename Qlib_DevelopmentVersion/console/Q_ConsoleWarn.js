@@ -13,22 +13,14 @@ function warn(...ARGS){
     }
 }
 
-function warnN(MSG , ...ARGS){
+function warnN(...ARGS){
     try{
         if(ARGS.length > 0){
 
-            switch (MSG){
-                case "" :  for(let i = 0 ; i < ARGS.length ; i+=1){
-                                    console.warn(ARGS[i]);
-                                } 
-                break;
-
-                default :   for(let i = 0 ; i < ARGS.length ; i+=1){
-                                console.warn(MSG , ARGS[i]);
-                            } 
-                break;
-            }
-
+            for(let i = 0 ; i < ARGS.length ; i+=1){
+                console.warn(ARGS[i]);
+            } 
+  
         }
         else{
             console.warn(QlibConsoleMessage + "0 argument");

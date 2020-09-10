@@ -12,7 +12,8 @@ const Sources_Console = [
     "../Qlib_DevelopmentVersion/console/Q_ConsoleLogStyle.js",
     "../Qlib_DevelopmentVersion/console/Q_ConsoleEmoji.js",
     "../Qlib_DevelopmentVersion/console/Q_ConsoleTable.js",
-    "../Qlib_DevelopmentVersion/console/Q_CONSOLE.js"
+    "../Qlib_DevelopmentVersion/console/Q_CONSOLE.js",
+    "../Qlib_DevelopmentVersion/console/Q_ConsoleFunctions.js"
 ];
 
 const Sources_String =  [

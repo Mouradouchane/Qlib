@@ -1,8 +1,8 @@
 
-function assert(...ARGS){
+function assert(condition = false , ...ARGS){
     try{
         if(ARGS.length > 0){
-            console.assert(false , ...ARGS);
+            console.assert(condition , ...ARGS);
         }
         else{
             console.warn(QlibConsoleMessage + "0 argument");
@@ -13,21 +13,14 @@ function assert(...ARGS){
     }
 }
 
-function assertN(MSG , ...ARGS){
+function assertN(...ARGS){
     try{
         if(ARGS.length > 0){
 
-            switch (MSG){
-                case "" :   for(let i = 0 ; i < ARGS.length ; i+=1){
-                                console.assert(false , ARGS[i]);
-                            } 
-                break;
-
-                default :   for(let i = 0 ; i < ARGS.length ; i+=1){
-                                console.assert(false , MSG , ARGS[i]);
-                            } 
-                break;
-            }
+            for(let i = 0 ; i < ARGS.length ; i+=1){
+                console.assert(false , ARGS[i]);
+            } 
+     
         }
         else{
             console.warn(QlibConsoleMessage + "0 argument");

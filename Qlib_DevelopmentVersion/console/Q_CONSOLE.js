@@ -1,4 +1,42 @@
 
+/*  
+    function for print multiple thing in console 
+    with choosing type of console like error warn & ...
+*/
+
+const CONSOLE = {
+    log(...ARGS){
+        try{
+            if(ARGS.length > 0){
+                console.log(...ARGS);
+            }
+            else{
+                console.warn(QlibConsoleMessage + "0 argument");
+            }
+        }
+        catch(err){
+            console.error(QlibConsoleMessage + " " + err);
+        }
+    },
+    logN(...ARGS){
+        try{
+            if(ARGS.length > 0){
+                for(let i = 0 ; i < ARGS.length ; i+=1){
+                    console.log(ARGS[i]);
+                } 
+            }
+            else{
+                console.warn(QlibConsoleMessage + "0 argument");
+            }
+        }
+        catch(err){
+            console.error(QlibConsoleMessage + err);
+        }
+    }
+    
+}
+
+/*
 function CONSOLE(ConsoleType = "log"  , ...ARGS){
     switch (ConsoleType){
         case "log"   : log(     ...ARGS );    break;
@@ -9,14 +47,18 @@ function CONSOLE(ConsoleType = "log"  , ...ARGS){
         default      : log(     ...ARGS );    break;
     }
 }
+*/
 
-function CONSOLE_N(ConsoleType = "log" , MSG , ...ARGS){
+/*
+    like CONSOLE function but any value new line
+*/
+function CONSOLE_N(ConsoleType = "log" , ...ARGS){
     switch (ConsoleType){
-        case "log"   : logN( MSG ,      ...ARGS );  break;
-        case "warn"  : warnN( MSG ,     ...ARGS );  break;
-        case "error" : errorN( MSG ,    ...ARGS );  break;
-        case "info"  : infoN( MSG ,     ...ARGS );  break;
-        case "assert": assertN( MSG ,   ...ARGS );  break;
-        default      : logN( MSG ,      ...ARGS );  break;
+        case "log"   : logN( ...ARGS );  break;
+        case "warn"  : warnN( ...ARGS );  break;
+        case "error" : errorN( ...ARGS );  break;
+        case "info"  : infoN( ...ARGS );  break;
+        case "assert": assertN( ...ARGS );  break;
+        default      : logN( ...ARGS );  break;
     }
 }

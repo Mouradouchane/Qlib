@@ -127,7 +127,7 @@ function logObj(OBJECT = {}, keys = true , values = true , ConsoleType = "log"){
 }
 
 
-function clear(message = " "){
+function Clear(message = " "){
     console.clear();
     console.log(message);
 }
