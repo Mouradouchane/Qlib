@@ -4,18 +4,24 @@ function CLEAR(message = " "){
     console.log(message);
 }
 
+function log(...ARGS){
+    try{
+        if(ARGS.length > 0) console.log(...ARGS);
 
-function log(args_Line_By_Line = false , ...ARGS){
+        else console.warn(QlibConsoleMessage + "0 argument");
+    }
+    catch(err){
+        console.error(QlibConsoleMessage + " " + err);
+    }
+}
+
+// print args in console in line by line
+function logN(...ARGS){
     try{
         if(ARGS.length > 0){
-            if(!args_Line_By_Line){
-                console.log(...ARGS);
-            }
-            else{
-                for(let i = 0 ; i < ARGS.length ; i+=1){
-                    console.log(ARGS[i]);
-                } 
-            }
+            for(let i = 0 ; i < ARGS.length ; i+=1){
+                console.log(ARGS[i]);
+            } 
         }
         else{
             console.warn(QlibConsoleMessage + "0 argument");
