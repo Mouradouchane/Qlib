@@ -1,8 +1,8 @@
-include(SOURCES.Console);
-include(SOURCES.String);
-include(SOURCES.Compare);
-include(SOURCES.Numbers);
-include(SOURCES.Swap);
+include(SOURCES.console);
+include(SOURCES.string);
+include(SOURCES.compare);
+include(SOURCES.numbers);
+include(SOURCES.swap);
 include(SOURCES.array);
 
 window.addEventListener("load" , function main(...args){
@@ -11,11 +11,11 @@ window.addEventListener("load" , function main(...args){
         Button2 = document.querySelector("#HideAlert");
     
     const x = new STRING("logiclly");
-    let arr = new ARRAY(100,1,80,9,200,2,3,9999,true);
+    let arr = new ARRAY();
+        arr.fill(NaN , 10);
 
-    arr.SORT();
+    log(arr.length , arr.size , arr);
 
-    log(arr);
 
 });
 

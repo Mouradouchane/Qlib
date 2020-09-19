@@ -4,29 +4,29 @@ const QlibConsoleMessage = "Qlib : ";
 
 // sources as paths of files sorted in Object OF Arrays
 const SOURCES = {
-    Console : [
+    console : [
         "../Qlib_DevelopmentVersion/console/Q_CONSOLE.js",
         "../Qlib_DevelopmentVersion/console/Q_ConsoleFunctions.js"
     ],
 
-    String :  [
+    string :  [
         "../Qlib_DevelopmentVersion/string/Q_String.js",
         "../Qlib_DevelopmentVersion/string/Q_StringFunctions.js",
     ],
 
-    Compare : [
+    compare : [
         "../Qlib_DevelopmentVersion/compare/Q_Compare.js",
         "../Qlib_DevelopmentVersion/compare/Q_MultiCompare.js"
     ],
 
-    Numbers : [
+    numbers : [
         "../Qlib_DevelopmentVersion/numbers/Q_Number.js",
         "../Qlib_DevelopmentVersion/numbers/Q_NumbersFunctions.js",
         "../Qlib_DevelopmentVersion/numbers/Q_NumberSystem.js",
         "../Qlib_DevelopmentVersion/numbers/Q_units.js"
     ],
 
-    Swap : [
+    swap : [
     "../Qlib_DevelopmentVersion/swap/Q_swap.js"
     ],
 
