@@ -136,7 +136,7 @@ const DOCUMENT = {
     //===================================================================================
 
     //===================================================================================
-    // this functions build it on appendChild & append function
+    // this functions build it on appendChild & append functions
     // HTML_ELEMENT  : element you want to append it as child
     // Parent : Destination where to append this child by default "BODY"
 
@@ -147,20 +147,37 @@ const DOCUMENT = {
             if(Parent === HTMLELEMENTS.head) document.head.appendChild(HTML_ELEMENT);
             // any thing else append in "body"
             else document.body.appendChild(HTML_ELEMENT);
-            // if any thing works fine return true for checking
+            // for checking
             return true;
         } 
-        catch(error){ // else throw false for check + exception message !
+        catch(error){ // throw false + exception message !
             console.exception(QlibConsoleMessage , error);
             throw false;
         }
     },
-
+    // concept pushChild
     push : function(HTML_ELEMENT = null , Parent = HTMLELEMENTS.body){
-        // build it on append
         try{
             if(Parent === HTMLELEMENTS.head) document.head.append(HTML_ELEMENT);
             else document.body.append(HTML_ELEMENT);
+            return true;
+        }
+        catch(error){ 
+            console.exception(QlibConsoleMessage , error);
+            throw false;
+        } 
+    },
+    //===================================================================================
+
+    //===================================================================================
+    // this function build it on prepend function
+    // HTML_ELEMENT  : element you want to prepend it as child
+    // Parent : Destination where to prepend this child by default "BODY" 
+    unshift : function(HTML_ELEMENT = null , Parent = HTMLELEMENTS.body){
+        // build it on prepend
+        try{
+            if(Parent === HTMLELEMENTS.head) document.head.prepend(HTML_ELEMENT);
+            else document.body.prepend(HTML_ELEMENT);
             // true for checking
             return true;
         }
@@ -169,9 +186,9 @@ const DOCUMENT = {
             throw false;
         } 
     },
-    // =====================================================================
+    //===================================================================================
 
-
+    
 };
 
 class ELEMENT{

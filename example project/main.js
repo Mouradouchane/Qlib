@@ -13,8 +13,7 @@ window.addEventListener("load" , function main(...args){
     
     let cvs = document.createElement(HTMLELEMENTS.canvas);
     
-    DOCUMENT.push(cvs);
-
+    
 
 });
 
