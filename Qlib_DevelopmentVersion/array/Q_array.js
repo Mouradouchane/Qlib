@@ -4,7 +4,6 @@ class ARRAY extends Array{
     constructor(...arg){
         
         super(...arg);
-
                         // this arg for shorting from "max to min" or "min to max" bydef "min to max"
         this.sortAndReverse = (MaxToMin = false) => {
             try{
@@ -64,7 +63,5 @@ class ARRAY extends Array{
             return new ARRAY(this);
         }
         
-        this.size = this.length;
-        this.lengthZeroBest = this.length - 2;
     }
 }

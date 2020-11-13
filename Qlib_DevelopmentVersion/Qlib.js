@@ -27,11 +27,16 @@ const SOURCES = {
     ],
 
     swap : [
-    "../Qlib_DevelopmentVersion/swap/Q_swap.js"
+        "../Qlib_DevelopmentVersion/swap/Q_swap.js"
     ],
 
     array : [
-    "../Qlib_DevelopmentVersion/array/Q_array.js"
+        "../Qlib_DevelopmentVersion/array/Q_array.js"
+    ],
+
+    dom : [
+        "../Qlib_DevelopmentVersion/dom/Q_DOM.js",
+        "../Qlib_DevelopmentVersion/dom/Q_DomFunctions.js"
     ]
 
 }
