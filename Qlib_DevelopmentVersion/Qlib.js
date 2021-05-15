@@ -37,6 +37,9 @@ const SOURCES = {
     dom : [
         "../Qlib_DevelopmentVersion/dom/Q_DOM.js",
         "../Qlib_DevelopmentVersion/dom/Q_DomFunctions.js"
+    ],
+    loop : [
+        "../Qlib_DevelopmentVersion/loop/Q_loop.js"
     ]
 
 }
